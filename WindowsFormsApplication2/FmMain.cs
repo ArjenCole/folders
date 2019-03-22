@@ -42,7 +42,6 @@ namespace Folders
             //edr.read(str + "\\2015年全国城市省市县区行政级别对照表-(最新最全).xls", "全国城市省市县区域列表");
             edr.read(str + "\\2015年全国城市省市县区行政级别对照表-(最新最全).csv");
             msc_Tree.fill(edr.Cell);
-            SetComboBox();
 
 
         }
@@ -58,43 +57,14 @@ namespace Folders
         {
             iniSave();
         }
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.Text == "") {comboBox2.Items.Clear(); comboBox3.Items.Clear(); return; }
-            comboBox2.Items.Clear();
-            comboBox2.Text = "";
-            comboBox3.Items.Clear();
-            comboBox3.Text = "";
-            
-            msc_Tree.SetList(comboBox1.Text,"",comboBox2);
-        }
-        private void comboBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (comboBox2.Text == "") {comboBox3.Items.Clear(); return; }
-            comboBox3.Items.Clear();
-            comboBox3.Text = "";
-            
-            msc_Tree.SetList(comboBox1.Text,comboBox2.Text,comboBox3);
-        }
         private void button_search_Click(object sender, EventArgs e)
         {
             TimeFilterToolStripMenuItem_Click(全部ToolStripMenuItem, e);
             List<string> nc =new List<string>();
-            if (comboBox1.Text != "") { nc.Add(comboBox1.Text); }
-            if (comboBox2.Text != "") { nc.Add(comboBox2.Text); }
-            if (comboBox3.Text != "") { nc.Add(comboBox3.Text); }
             if (textBox1.Text != "") { nc.Add(textBox1.Text); }
             msc_FolderList.cList_fill(nc);
             ShowOnListview();
             
-        }//点击搜索
-        private void button_reset_Click(object sender, EventArgs e)
-        {
-            comboBox1.Text = "";
-            comboBox2.Text = "";
-            comboBox3.Text = "";
-            textBox1.Text = "";
-            button_search_Click(sender,e);
         }
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
@@ -383,29 +353,7 @@ namespace Folders
 
         #endregion
         #region ======================================自定义函数======================================
-        /// <summary>
-        /// 将edr中数据读入s\p\c并且填入combobox中
-        /// </summary>
-        private void SetComboBox()
-        {
 
-            comboBox1.AutoCompleteMode = AutoCompleteMode.Suggest;//设置自动完成的模式
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;//设置自动完成的字符串源
-            comboBox2.AutoCompleteMode = AutoCompleteMode.Suggest;//设置自动完成的模式
-            comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;//设置自动完成的字符串源
-            comboBox3.AutoCompleteMode = AutoCompleteMode.Suggest;//设置自动完成的模式
-            comboBox3.AutoCompleteSource = AutoCompleteSource.ListItems;//设置自动完成的字符串源
-            
-            
-            foreach(mc_Tree tmp_tree in msc_Tree.S.son)
-            {
-                if(!(string.IsNullOrEmpty(tmp_tree.Name)))
-                {
-                    comboBox1.Items.Add(tmp_tree.Name);
-                }                
-            }
-            comboBox1.Text = "";
-        }
         /// <summary>
         /// 刷新listview1列表
         /// </summary>
