@@ -150,6 +150,10 @@ namespace Folders
             return true;
         }
 
-
+        public static void updatePD(ProjectDetails pPD, string pPath)
+        {
+            mc_FolderInfoType tmFIT = fList.Find(t => t.Path + t.Name == pPath);
+            tmFIT.PD = pPD;
+        }
     }
 }

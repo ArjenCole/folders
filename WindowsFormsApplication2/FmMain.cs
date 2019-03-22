@@ -140,7 +140,7 @@ namespace Folders
                     currentPD.Pnote = dataGridView1.CurrentCell.Value.ToString();
                     break;
             }
-
+            msc_FolderList.updatePD(currentPD, currentFolder);
             XML_Class XmlFile = new XML_Class();
             XmlFile.FilePath = currentXMLpath;
             XmlFile.WriteXml(currentPD);
