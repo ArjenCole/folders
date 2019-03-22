@@ -233,6 +233,23 @@ namespace Folders
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int c = listView1.SelectedIndices[0];//获得选中项的索引
+                currentFolder = listView1.Items[c].SubItems[1].Text + listView1.Items[c].Text;//组装绝对地址
+                currentPD.FolderName(listView1.Items[currentRowIndex].Text);
+                if ((currentPD == null) || (currentPD.Contacts == null)) { return; }
+                FmContacts fmContacts = new FmContacts(currentXMLpath);
+                fmContacts.Pdetails = currentPD;
+                fmContacts.ShowDialog();
+                listView1.Focus();
+                ShowOnListview();
+                listView1.Items[currentRowIndex].Selected = true;//设定选中
+            }
+            catch
+            {
+                MessageBox.Show("未选择项目或项目未建立项目信息文件。", " 提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
         #region ======================================菜单栏======================================
@@ -278,24 +295,7 @@ namespace Folders
         }
         private void dataGridView2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                int c = listView1.SelectedIndices[0];//获得选中项的索引
-                currentFolder = listView1.Items[c].SubItems[1].Text + listView1.Items[c].Text;//组装绝对地址
-                currentPD.FolderName(listView1.Items[currentRowIndex].Text);
-                if ((currentPD == null) || (currentPD.Contacts == null)) { return; }
-                FmContacts fmContacts = new FmContacts(currentXMLpath);
-                fmContacts.Pdetails = currentPD;
-                fmContacts.ShowDialog();
-                listView1.Focus();
-                ShowOnListview();
-                listView1.Items[currentRowIndex].Selected = true;//设定选中
-            }
-            catch
-            {
-                MessageBox.Show("未选择项目或项目未建立项目信息文件。", " 提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
+            this.button1_Click(sender, e);
         }
         private void 设置目录列表ToolStripMenuItem_Click(object sender, EventArgs e)
         {

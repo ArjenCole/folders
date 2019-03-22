@@ -126,7 +126,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label6.Location = new System.Drawing.Point(0, 460);
+            this.label6.Location = new System.Drawing.Point(705, 442);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 7;
@@ -209,14 +209,14 @@
             // 编辑项目信息ToolStripMenuItem
             // 
             this.编辑项目信息ToolStripMenuItem.Name = "编辑项目信息ToolStripMenuItem";
-            this.编辑项目信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.编辑项目信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.编辑项目信息ToolStripMenuItem.Text = "编辑项目信息";
             this.编辑项目信息ToolStripMenuItem.Click += new System.EventHandler(this.编辑项目信息ToolStripMenuItem_Click);
             // 
             // 管理通讯录ToolStripMenuItem
             // 
             this.管理通讯录ToolStripMenuItem.Name = "管理通讯录ToolStripMenuItem";
-            this.管理通讯录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.管理通讯录ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.管理通讯录ToolStripMenuItem.Text = "管理通讯录";
             this.管理通讯录ToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -312,7 +312,7 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(206, 227);
+            this.dataGridView2.Size = new System.Drawing.Size(206, 207);
             this.dataGridView2.TabIndex = 10;
             this.dataGridView2.TabStop = false;
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
@@ -361,7 +361,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 477);
+            this.ClientSize = new System.Drawing.Size(916, 462);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
