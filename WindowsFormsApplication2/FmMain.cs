@@ -179,6 +179,7 @@ namespace Folders
             }
             currentPD.Contacts[dataGridView2.CurrentCell.RowIndex] = tmp_str.Remove(tmp_str.Length - 1, 1);
 
+            msc_FolderList.updatePD(currentPD, currentFolder);
             XML_Class XmlFile = new XML_Class();
             XmlFile.FilePath = currentXMLpath;
             XmlFile.WriteXml(currentPD);
