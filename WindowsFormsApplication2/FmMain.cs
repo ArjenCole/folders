@@ -94,32 +94,20 @@ namespace Folders
                 int pos_int = listView1.Items[currentRowIndex].Text.LastIndexOf("】");
                 string XMLpath = listView1.Items[currentRowIndex].SubItems[1].Text + listView1.Items[currentRowIndex].Text +
                         @"\" + listView1.Items[currentRowIndex].Text.Remove(0, pos_int + 1) + ".xml";//组装XML文件绝对地址
-                ProjectDetails tPD = getPD(XMLpath);
+                ProjectDetails tPD = mscCtrl.getPD(XMLpath);
+                currentPD = tPD;
+                currentXMLpath = XMLpath;
                 if (tPD == null)
                 {
                     XMLpath = listView1.Items[currentRowIndex].SubItems[1].Text + listView1.Items[currentRowIndex].Text +
                         @"\foldersPD.xml";//组装XML文件绝对地址
-                    tPD = getPD(XMLpath);
+                    tPD = mscCtrl.getPD(XMLpath);
+                    currentPD = tPD;
+                    currentXMLpath = XMLpath;
+
                 }
                 ShowDetailsOnDV(tPD);
             }
-        }
-        private ProjectDetails getPD(string pPath)
-        {
-            ProjectDetails rtPD = new Folders.ProjectDetails();
-            if (File.Exists(pPath))
-            {
-                XML_Class x = new XML_Class();
-                rtPD = x.ReadXml(pPath);
-            }
-            else
-            {
-                rtPD = null;
-            }
-            currentPD = rtPD;
-            currentXMLpath = pPath;
-            return rtPD;
-
         }
        
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -245,23 +233,7 @@ namespace Folders
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int c = listView1.SelectedIndices[0];//获得选中项的索引
-                currentFolder = listView1.Items[c].SubItems[1].Text + listView1.Items[c].Text;//组装绝对地址
-                currentPD.FolderName(listView1.Items[currentRowIndex].Text);
-                if ((currentPD == null) || (currentPD.Contacts == null)) { return; }
-                FmContacts fmContacts = new FmContacts(currentXMLpath);
-                fmContacts.Pdetails = currentPD;
-                fmContacts.ShowDialog();
-                listView1.Focus();
-                ShowOnListview();
-                listView1.Items[currentRowIndex].Selected = true;//设定选中
-            }
-            catch
-            {
-                MessageBox.Show("未选择项目或项目未建立项目信息文件。", " 提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
         }
         #region ======================================菜单栏======================================
         private void 新建项目ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -306,7 +278,24 @@ namespace Folders
         }
         private void dataGridView2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            button1_Click(sender, e);
+            try
+            {
+                int c = listView1.SelectedIndices[0];//获得选中项的索引
+                currentFolder = listView1.Items[c].SubItems[1].Text + listView1.Items[c].Text;//组装绝对地址
+                currentPD.FolderName(listView1.Items[currentRowIndex].Text);
+                if ((currentPD == null) || (currentPD.Contacts == null)) { return; }
+                FmContacts fmContacts = new FmContacts(currentXMLpath);
+                fmContacts.Pdetails = currentPD;
+                fmContacts.ShowDialog();
+                listView1.Focus();
+                ShowOnListview();
+                listView1.Items[currentRowIndex].Selected = true;//设定选中
+            }
+            catch
+            {
+                MessageBox.Show("未选择项目或项目未建立项目信息文件。", " 提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
         private void 设置目录列表ToolStripMenuItem_Click(object sender, EventArgs e)
         {

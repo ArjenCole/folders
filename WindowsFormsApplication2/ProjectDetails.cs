@@ -64,6 +64,9 @@ namespace Folders
             set { contacts = value; }
         }
 
+        public string StringForSearch { get { return stringForSearch(); } }
+
+
         private string foldername = "";
         public string FolderName()
         {
@@ -80,5 +83,23 @@ namespace Folders
             return foldername;
         }
 
+        private string stringForSearch()
+        {
+            string rtS = "";
+            rtS += p + Environment.NewLine;
+            rtS += c + Environment.NewLine;
+            rtS += pname + Environment.NewLine;
+            rtS += pindex + Environment.NewLine;
+            rtS += pincharge + Environment.NewLine;
+            rtS += pdep + Environment.NewLine;
+            rtS += pnote + Environment.NewLine;
+
+            foreach (string feS in contacts)
+            {
+                rtS += feS + Environment.NewLine;
+            }
+
+            return rtS;
+        }
     }
 }

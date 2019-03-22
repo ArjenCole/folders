@@ -14,6 +14,7 @@ namespace Folders
         public string Path { get; set; }
         public string CreationTime { get; set; }
         public string EditTime { get; set; }
+        public ProjectDetails PD { get; set; }
     }
     static class msc_FolderList
     {
@@ -72,6 +73,7 @@ namespace Folders
                                 tmp_FIT.Path = path_str + @"\";
                                 tmp_FIT.CreationTime = fin.CreationTime.ToString(@"yyyy/MM/dd");
                                 tmp_FIT.EditTime = fin.LastWriteTime.ToString(@"yyyy/MM/dd");
+                                tmp_FIT.PD = mscCtrl.getPD(path_str + @"\" + fin.Name + @"\foldersPD.xml");
                                 fList.Add(tmp_FIT);
                             }
                         }
@@ -134,9 +136,13 @@ namespace Folders
         {
             TimeSpan ts= DateTime.Now- DateTime.Parse(tmp_FIT.EditTime);
             if ((ts.Days > timeFilter * 30) &&(timeFilter>0)){return false;}
+            string tStr4Search = tmp_FIT.Name;
+            if (tmp_FIT.PD != null)
+                tStr4Search += Environment.NewLine + tmp_FIT.PD.StringForSearch;
+
             foreach(string c in cList)
             {   
-                if (tmp_FIT.Name.IndexOf(c) < 0)
+                if (tStr4Search.IndexOf(c) < 0)
                 {
                     return false;
                 }
