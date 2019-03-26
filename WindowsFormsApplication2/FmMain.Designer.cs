@@ -63,6 +63,7 @@
             this.编辑项目信息ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.管理通讯录ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblTbGrayWord = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -357,12 +358,27 @@
             this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_Click);
             // 
+            // lblTbGrayWord
+            // 
+            this.lblTbGrayWord.AutoSize = true;
+            this.lblTbGrayWord.BackColor = System.Drawing.SystemColors.Window;
+            this.lblTbGrayWord.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblTbGrayWord.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTbGrayWord.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblTbGrayWord.Location = new System.Drawing.Point(201, 1);
+            this.lblTbGrayWord.Name = "lblTbGrayWord";
+            this.lblTbGrayWord.Size = new System.Drawing.Size(115, 20);
+            this.lblTbGrayWord.TabIndex = 11;
+            this.lblTbGrayWord.Text = "输入查询内容……";
+            this.lblTbGrayWord.Click += new System.EventHandler(this.lblTbGrayWord_Click);
+            // 
             // FmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 462);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.lblTbGrayWord);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
@@ -423,6 +439,7 @@
         private System.Windows.Forms.ToolStripMenuItem 打开项目ToolStripMenuItem1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripMenuItem 导出当前项目列表ToolStripMenuItem;
+        private System.Windows.Forms.Label lblTbGrayWord;
     }
 }
 

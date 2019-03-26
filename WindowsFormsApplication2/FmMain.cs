@@ -60,10 +60,17 @@ namespace Folders
         {
             TimeFilterToolStripMenuItem_Click(全部ToolStripMenuItem, e);
             List<string> nc =new List<string>();
-            if (textBox1.Text != "") { nc.Add(textBox1.Text); }
+            if (textBox1.Text != "")
+            {
+                nc.Add(textBox1.Text);
+                lblTbGrayWord.Visible = false;
+            }
+            else
+            {
+                lblTbGrayWord.Visible = true;
+            }
             msc_FolderList.cList_fill(nc);
             ShowOnListview();
-            
         }
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
@@ -537,6 +544,11 @@ namespace Folders
                 else
                     return string.Empty;
             }
+        }
+
+        private void lblTbGrayWord_Click(object sender, EventArgs e)
+        {
+            textBox1.Focus();
         }
     }
 }
