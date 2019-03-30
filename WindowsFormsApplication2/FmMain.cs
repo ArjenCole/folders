@@ -19,6 +19,7 @@ namespace Folders
         ReadExcel_Class edr = new ReadExcel_Class();
         public ProjectDetails currentPD = null;
         public string currentXMLpath;
+        private bool isActived = true;//用于判断窗体是否再次获得焦点，获得后失去焦点隐藏窗体
 
         private static Dictionary<string, FileSystemWatcher> dicFSW = new Dictionary<string, FileSystemWatcher>();
 
@@ -50,7 +51,6 @@ namespace Folders
             setFileSystemWatcher();
             mscCtrl.fmMainStarted = true;
             this.Activate();
-
         }
         private void FmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -517,6 +517,19 @@ namespace Folders
                 this.notifyIcon1.Visible = true;
             }
         }
+        private void FmMain_Deactivate(object sender, EventArgs e)
+        {
+            if (this.isActived)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.isActived = false;
+            }
+        }
+
+        private void FmMain_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.isActived = true;
+        }
 
         private void 导出当前项目列表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -550,5 +563,7 @@ namespace Folders
         {
             textBox1.Focus();
         }
+
+
     }
 }

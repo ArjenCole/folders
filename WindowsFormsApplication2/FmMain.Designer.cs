@@ -392,8 +392,10 @@
             this.Name = "FmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "folders";
+            this.Deactivate += new System.EventHandler(this.FmMain_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FmMain_FormClosing);
             this.Load += new System.EventHandler(this.FmMain_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
