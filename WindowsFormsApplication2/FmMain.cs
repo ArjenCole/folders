@@ -255,7 +255,9 @@ namespace Folders
             }
             catch
             {
+                this.isActived = false;
                 MessageBox.Show("未选择项目或项目未建立项目信息文件。", " 提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.isActived = true;
             }
 
         }
@@ -293,7 +295,9 @@ namespace Folders
             }
             catch
             {
+                this.isActived = false;
                 MessageBox.Show("未选择项目。", " 提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.isActived = true;
             }
         }
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -307,11 +311,13 @@ namespace Folders
         private void 设置目录列表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
+            this.isActived = false;
             if (form5.ShowDialog() == DialogResult.OK)
             {
                 setFileSystemWatcher();
                 ShowOnListview();
             }
+            this.isActived = true;
         }
 
         private void setFileSystemWatcher()
@@ -489,9 +495,11 @@ namespace Folders
         /// <returns>DialogResult类</returns>
         private DialogResult OpenFmNewInfo(FmNewInfo.FormType_enum formtype)
         {
+            this.isActived = false;
             FmNewInfo fmNewInfo = new FmNewInfo(currentXMLpath, formtype , currentPD);
             DialogResult r= fmNewInfo.ShowDialog();
             listView1.Focus();
+            this.isActived = true;
             return r;            
         }
 
@@ -538,10 +546,16 @@ namespace Folders
             {
                 itemListStr += "\r\n" + feLVI.Text;
             }
-            
-            StreamWriter SW = new StreamWriter(getSavePath(), true);
-            SW.Write(itemListStr);
-            SW.Dispose();
+            this.isActived = false;
+            string tPath = getSavePath();
+            this.isActived = true;
+            if (tPath != "")
+            {
+                StreamWriter SW = new StreamWriter(tPath, true);
+                SW.Write(itemListStr);
+                SW.Dispose();
+            }
+
 
         }
 
@@ -553,9 +567,13 @@ namespace Folders
                 SFD.Filter = pFilter;
                 SFD.FileName = pFileName;
                 if (SFD.ShowDialog() == DialogResult.OK)
+                {
                     return SFD.FileName;
+                }   
                 else
+                {
                     return string.Empty;
+                }   
             }
         }
 
@@ -563,7 +581,5 @@ namespace Folders
         {
             textBox1.Focus();
         }
-
-
     }
 }
