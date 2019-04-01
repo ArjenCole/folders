@@ -90,6 +90,7 @@
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.listView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             // 
             // columnHeader1
             // 
@@ -120,6 +121,7 @@
             this.textBox1.Size = new System.Drawing.Size(502, 23);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.button_search_Click);
+            this.textBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             // 
             // label6
             // 
@@ -132,6 +134,7 @@
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "Loading...";
+            this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             // 
             // menuStrip1
             // 
@@ -146,6 +149,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(916, 25);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             // 
             // 文件ToolStripMenuItem
             // 
@@ -302,6 +306,7 @@
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
+            this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             // 
             // dataGridView2
             // 
@@ -319,6 +324,7 @@
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             this.dataGridView2.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellMouseEnter);
             this.dataGridView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseDoubleClick);
+            this.dataGridView2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FmMain_MouseMove);
             // 
             // contextMenuStrip1
             // 
