@@ -537,10 +537,7 @@ namespace Folders
         private void FmMain_MouseMove(object sender, MouseEventArgs e)
         {
             if (!isActived)
-            {
                 this.isActived = true;
-                this.Text += " ACT";
-            }
         }
 
         private void 导出当前项目列表ToolStripMenuItem_Click(object sender, EventArgs e)
