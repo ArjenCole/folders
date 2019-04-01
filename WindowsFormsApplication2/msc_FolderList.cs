@@ -106,7 +106,9 @@ namespace Folders
             string rtS = pStr;
             string[] replace_str = new string[] { "省", "市", "地区", "盟", "区", "旗", "县", "新区" };
             foreach (string r in replace_str)
-                rtS = rtS.Replace(r, ""); 
+                if (pStr.EndsWith(r))
+                    rtS = pStr.Substring(0, pStr.Length - r.Length);
+                //rtS = rtS.Replace(r, ""); 
             return rtS;
         }
         /// <summary>
