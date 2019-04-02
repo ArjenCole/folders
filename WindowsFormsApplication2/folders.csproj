@@ -56,7 +56,7 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="mc_Ini.cs" />
+    <Compile Include="mscIni.cs" />
     <Compile Include="mscCtrl.cs" />
     <Compile Include="msc_FolderList.cs" />
     <Compile Include="FmCover.cs">

@@ -386,9 +386,10 @@ namespace Folders
         /// </summary>
         private void iniRead()
         {
-            msc_Ini.mc_ini.filePath = System.Environment.CurrentDirectory + @"\folders.ini";
-            msc_FolderList.timeFilter= int.Parse(msc_Ini.mc_ini.getValue("TimeFilter"));
-            msc_FolderList.defaultPath = msc_Ini.mc_ini.getValue("DefaultPath");
+            mscIni.filePath = System.Environment.CurrentDirectory + @"\folders.ini";
+            mscIni.creatINI();
+
+            msc_FolderList.defaultPath = mscIni.getValue("DefaultPath");
 
             一个月ToolStripMenuItem.Checked = false;
             三个月ToolStripMenuItem.Checked = false;
@@ -411,9 +412,9 @@ namespace Folders
             }
 
             List<string> tmp_list_str = new List<string>();
-            for (int i = 1; i <= int.Parse(msc_Ini.mc_ini.getValue("PathListCount")); i++)
+            for (int i = 1; i <= int.Parse(mscIni.getValue("PathListCount")); i++)
             {
-                tmp_list_str.Add(msc_Ini.mc_ini.getValue("PathList" + i.ToString()));
+                tmp_list_str.Add(mscIni.getValue("PathList" + i.ToString()));
             }
             msc_FolderList.pList_fill(tmp_list_str);
             ShowOnListview();
@@ -423,12 +424,12 @@ namespace Folders
         /// </summary>
         private void iniSave()
         {
-            msc_Ini.mc_ini.setValue("TimeFilter", msc_FolderList.timeFilter.ToString());
-            msc_Ini.mc_ini.setValue("DefaultPath", msc_FolderList.defaultPath);
-            msc_Ini.mc_ini.setValue("PathListCount", msc_FolderList.pList.Count.ToString());//地址列表的数量，注意是数量不是最大下标
-            for (int i = 1; i <= int.Parse(msc_Ini.mc_ini.getValue("PathListCount")); i++)
+            mscIni.setValue("TimeFilter", msc_FolderList.timeFilter.ToString());
+            mscIni.setValue("DefaultPath", msc_FolderList.defaultPath);
+            mscIni.setValue("PathListCount", msc_FolderList.pList.Count.ToString());//地址列表的数量，注意是数量不是最大下标
+            for (int i = 1; i <= int.Parse(mscIni.getValue("PathListCount")); i++)
             {
-                msc_Ini.mc_ini.setValue("PathList" + i.ToString(), msc_FolderList.pList[i - 1]);
+                mscIni.setValue("PathList" + i.ToString(), msc_FolderList.pList[i - 1]);
             }
         }
         /// <summary>
