@@ -306,7 +306,9 @@ namespace Folders
         }
         private void dataGridView2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            this.isActived = false;
             this.button1_Click(sender, e);
+            this.isActived = true;
         }
         private void 设置目录列表ToolStripMenuItem_Click(object sender, EventArgs e)
         {

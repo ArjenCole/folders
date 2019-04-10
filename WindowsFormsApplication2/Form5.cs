@@ -84,8 +84,13 @@ namespace Folders
             {
                 tmp_List.Add(fe_LVI.Text);
             }
+            if (tmp_List.Count == 0)
+            {
+                MessageBox.Show("文件地址列表不可为空", "提示", MessageBoxButtons.OK);
+                return;
+            }
             msc_FolderList.pList_fill(tmp_List);
-            msc_FolderList.defaultPath = lblDefaultPath.Text;
+            msc_FolderList.defaultPath = tmp_List.Contains(lblDefaultPath.Text) ? lblDefaultPath.Text : tmp_List[0];
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
