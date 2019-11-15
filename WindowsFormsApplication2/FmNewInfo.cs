@@ -53,7 +53,7 @@ namespace Folders
             getPdetailsFromTexts();
 
             //DirectoryInfo Dinfo = new DirectoryInfo(@"E:\项目文件\" + Pdetails.FolderName());//创建文件夹地址字符串
-            DirectoryInfo Dinfo = new DirectoryInfo(msc_FolderList.defaultPath + Pdetails.FolderName());//创建文件夹地址字符串
+            DirectoryInfo Dinfo = new DirectoryInfo(msc_FolderList.defaultPath + @"\" + Pdetails.FolderName());//创建文件夹地址字符串
             Dinfo.Create();//创建文件夹
 
             XML_Class XmlFile = new XML_Class();
