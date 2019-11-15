@@ -392,6 +392,7 @@ namespace Folders
             mscIni.creatINI();
 
             msc_FolderList.defaultPath = mscIni.getValue("DefaultPath");
+            msc_FolderList.timeFilter = int.Parse(mscIni.getValue("TimeFilter"));
 
             一个月ToolStripMenuItem.Checked = false;
             三个月ToolStripMenuItem.Checked = false;
