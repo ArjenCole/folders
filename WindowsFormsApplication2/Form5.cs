@@ -31,9 +31,10 @@ namespace Folders
         {
             if(folderBrowserDialog1.ShowDialog()==DialogResult.OK)
             {
-                if(!listviewContain(folderBrowserDialog1.SelectedPath))
+                var tPath = lastChar(folderBrowserDialog1.SelectedPath);
+                if (!listviewContain(tPath))
                 {
-                    listView1.Items.Add(folderBrowserDialog1.SelectedPath);
+                    listView1.Items.Add(tPath);
                 }   
             }
         }
@@ -46,9 +47,10 @@ namespace Folders
                 FileSystemInfo[] f = dir.GetFileSystemInfos();//读取文件信息
                 foreach (FileSystemInfo fe_FSI in f)//遍历文件
                 {
-                    if ((fe_FSI is DirectoryInfo)&& (!listviewContain(lastChar(folderBrowserDialog1.SelectedPath)+ fe_FSI.Name)))//如果为文件夹
+                    var tPath = lastChar(lastChar(folderBrowserDialog1.SelectedPath) + fe_FSI.Name);
+                    if ((fe_FSI is DirectoryInfo)&& (!listviewContain(tPath)))//如果为文件夹
                     {
-                        listView1.Items.Add(lastChar(folderBrowserDialog1.SelectedPath)  + fe_FSI.Name);
+                        listView1.Items.Add(tPath);
                     }
                 }
             }

@@ -69,7 +69,7 @@ namespace Folders
                             {
                                 mc_FolderInfoType tmp_FIT = new mc_FolderInfoType();
                                 tmp_FIT.Name = fin.Name;
-                                tmp_FIT.Path = path_str + @"\";
+                                tmp_FIT.Path = path_str;// + @"\";
                                 tmp_FIT.CreationTime = fin.CreationTime.ToString(@"yyyy/MM/dd");
                                 tmp_FIT.EditTime = fin.LastWriteTime.ToString(@"yyyy/MM/dd");
                                 tmp_FIT.PD = mscCtrl.getPD(path_str + @"\" + fin.Name + @"\foldersPD.xml");
