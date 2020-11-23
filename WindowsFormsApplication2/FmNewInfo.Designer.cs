@@ -61,7 +61,7 @@
             this.btnNew.Location = new System.Drawing.Point(303, 94);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(87, 29);
-            this.btnNew.TabIndex = 5;
+            this.btnNew.TabIndex = 9;
             this.btnNew.Text = "新建";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -72,7 +72,7 @@
             this.btnCancel.Location = new System.Drawing.Point(303, 133);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(87, 29);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -119,7 +119,7 @@
             this.comboBox2.Location = new System.Drawing.Point(13, 125);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 25);
-            this.comboBox2.TabIndex = 13;
+            this.comboBox2.TabIndex = 2;
             // 
             // comboBox1
             // 
@@ -127,7 +127,7 @@
             this.comboBox1.Location = new System.Drawing.Point(13, 62);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 25);
-            this.comboBox1.TabIndex = 12;
+            this.comboBox1.TabIndex = 1;
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // groupBox2
@@ -159,7 +159,7 @@
             this.btnOK.Location = new System.Drawing.Point(303, 62);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(87, 29);
-            this.btnOK.TabIndex = 27;
+            this.btnOK.TabIndex = 8;
             this.btnOK.Text = "确定";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -225,35 +225,35 @@
             this.comboBox4.Location = new System.Drawing.Point(6, 129);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 25);
-            this.comboBox4.TabIndex = 21;
+            this.comboBox4.TabIndex = 6;
             // 
             // text_Cincharge
             // 
             this.text_Cincharge.Location = new System.Drawing.Point(147, 129);
             this.text_Cincharge.Name = "text_Cincharge";
             this.text_Cincharge.Size = new System.Drawing.Size(121, 23);
-            this.text_Cincharge.TabIndex = 20;
+            this.text_Cincharge.TabIndex = 7;
             // 
             // text_Pincharge
             // 
             this.text_Pincharge.Location = new System.Drawing.Point(149, 82);
             this.text_Pincharge.Name = "text_Pincharge";
             this.text_Pincharge.Size = new System.Drawing.Size(121, 23);
-            this.text_Pincharge.TabIndex = 19;
+            this.text_Pincharge.TabIndex = 5;
             // 
             // text_Pindex
             // 
             this.text_Pindex.Location = new System.Drawing.Point(8, 82);
             this.text_Pindex.Name = "text_Pindex";
             this.text_Pindex.Size = new System.Drawing.Size(121, 23);
-            this.text_Pindex.TabIndex = 18;
+            this.text_Pindex.TabIndex = 4;
             // 
             // text_Pname
             // 
             this.text_Pname.Location = new System.Drawing.Point(8, 38);
             this.text_Pname.Name = "text_Pname";
             this.text_Pname.Size = new System.Drawing.Size(388, 23);
-            this.text_Pname.TabIndex = 17;
+            this.text_Pname.TabIndex = 3;
             // 
             // groupBox3
             // 
@@ -271,7 +271,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(536, 125);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 12;
             // 
             // checkBox1
             // 
@@ -279,7 +279,7 @@
             this.checkBox1.Location = new System.Drawing.Point(12, 0);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(60, 16);
-            this.checkBox1.TabIndex = 0;
+            this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "备注：";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
